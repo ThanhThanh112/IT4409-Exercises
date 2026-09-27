@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!-- 
+	Blakletterpress Website Template - Phiên bản Refactor HTML5 Semantic & SEO
+	File gốc: index.html | File mới: index_new.html
+	Mục đích: Chuyển đổi sang thẻ ngữ nghĩa HTML5, tối ưu On-page SEO & Accessibility
+	Lưu ý: Giữ nguyên cấu trúc DOM tương thích với css/style.css (không chỉnh sửa CSS)
+-->
+
+<!-- [REFACTOR] Thêm lang="vi" cho khai báo ngôn ngữ trang -->
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- [SEO] Viewport cho responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- [SEO] Mô tả trang - hiển thị trên kết quả tìm kiếm -->
+	<meta name="description" content="Blakletterpress – nguồn tin tức trực tuyến đáng tin cậy. Cập nhật tin tức, bài viết chuyên sâu và blog mới nhất.">
+
+	<!-- [SEO] Từ khóa liên quan -->
+	<meta name="keywords" content="Blakletterpress, tin tức, news, blog, báo chí, trusted news">
+
+	<!-- [SEO] Tác giả -->
+	<meta name="author" content="Blakletterpress">
+
+	<!-- [SEO] Chỉ thị cho Googlebot -->
+	<meta name="robots" content="index, follow">
+
+	<!-- [SEO] URL chuẩn canonical -->
+	<link rel="canonical" href="https://www.blakletterpress.com/">
+
+	<!-- [SEO] Open Graph - hiển thị khi chia sẻ lên mạng xã hội -->
+	<meta property="og:title" content="Blakletterpress – Your Online Source of Trusted News">
+	<meta property="og:description" content="Nguồn tin tức trực tuyến đáng tin cậy. Cập nhật tin tức, bài viết chuyên sâu và blog mới nhất.">
+	<meta property="og:image" content="images/logo.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.blakletterpress.com/">
+
+	<title>Blakletterpress Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<!-- [REFACTOR] Đảm bảo các thẻ semantic hiển thị block trên mọi trình duyệt (bao gồm IE9+) -->
+	<style>
+		header, footer, main, aside, nav, section, article, figure, figcaption {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="page">
+
+		<!-- ==================== HEADER ==================== -->
+		<!-- [REFACTOR] <div id="header"> ➔ <header id="header"> -->
+		<header id="header">
+			<div id="motto">
+				<!-- [SEO] alt mô tả rõ nội dung ảnh logo chữ -->
+				<a href="index.html" class="sitename"><img src="images/blakletterpress.png" height="24" width="142" alt="Blakletterpress – Trang tin tức trực tuyến"></a>
+				<p>
+					<!-- [SEO] alt mô tả slogan thực tế trong ảnh -->
+					<img src="images/header-text.png" height="14" width="218" alt="Your online source of trusted news">
+				</p>
+			</div>
+			<div id="logo">
+				<!-- [SEO] alt mô tả logo BLP -->
+				<a href="index.html"><img src="images/logo.png" alt="Logo Blakletterpress BLP – Trang chủ"></a>
+			</div>
+			<div id="searchbar">
+				<!-- [REFACTOR] Thêm role="search" và aria-label cho form tìm kiếm -->
+				<form action="#" method="post" role="search" aria-label="Tìm kiếm trên trang">
+					<input type="text" value="Enter search query" class="txtfield" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
+					<!-- [ACCESSIBILITY] Thêm aria-label và title cho nút Search -->
+					<input type="submit" value="Search" class="btn" aria-label="Tìm kiếm" title="Nhấn để tìm kiếm">
+				</form>
+			</div>
+		</header>
+		<!-- /HEADER -->
+
+		<div id="contents">
+
+			<!-- ==================== MAIN ==================== -->
+			<!-- [REFACTOR] <div id="main"> ➔ <main id="main" role="main"> -->
+			<main id="main" role="main">
+
+				<!-- [REFACTOR] <div id="gallery"> ➔ <section id="gallery"> -->
+				<!-- Giữ <div> bên trong để khớp CSS selector: #gallery > div -->
+				<section id="gallery">
+					<div>
+						<!-- [REFACTOR] Bọc ảnh lớn trong <figure> -->
+						<figure>
+							<!-- [SEO] alt mô tả nội dung ảnh thực tế -->
+							<img src="images/team-large.jpg" alt="Đội ngũ Blakletterpress họp mặt tại hội trường chính">
+						</figure>
+					</div>
+					<ul>
+						<li>
+							<!-- [SEO] alt mô tả từng ảnh thumbnail -->
+							<img src="images/smiling.jpg" alt="Nụ cười thân thiện của thành viên đội ngũ">
+						</li>
+						<li>
+							<img src="images/ecofriends.jpg" alt="Nhóm bạn trẻ hoạt động vì môi trường xanh">
+						</li>
+						<li>
+							<img src="images/team.jpg" alt="Ảnh nhóm đội ngũ biên tập viên Blakletterpress">
+						</li>
+						<li>
+							<img src="images/smiling.jpg" alt="Thành viên đội ngũ với nụ cười tự tin">
+						</li>
+						<li>
+							<img src="images/ecofriends.jpg" alt="Hoạt động cộng đồng thân thiện môi trường">
+						</li>
+						<li>
+							<img src="images/team.jpg" alt="Đội ngũ Blakletterpress tại văn phòng">
+						</li>
+					</ul>
+				</section>
+				<!-- /gallery -->
+
+				<!-- [REFACTOR] Bọc nội dung bài viết bằng <article>, giữ <div class="body"> để khớp CSS: #main div.body -->
+				<article>
+					<div class="body">
+						<h1>This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for <em>free</em>.</h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius fermentum. Nullam porta hendrerit metus id hendrerit. Maecenas consequat neque sed tellus commodo ultrices et et est. Maecenas non justo vitae dui vulputate rutrum sed a lacus. Pellentesque dapibus, felis eget ornare ultrices, est est imperdiet magna, id ultrices odio leo sed erat. Maecenas nec est egestas ipsum bibendum iaculis. Nulla accumsan posuere nisl. Cras eu consectetur turpis. Etiam condimentum, lorem ac imperdiet ultricies, velit arcu feugiat nunc, vel tristique sapien diam quis velit. Maecenas non metus augue, sit amet tristique libero. In placerat urna quis orci hendrerit pretium. Donec luctus, magna rhoncus pretium tempor, odio orci consequat turpis, id rutrum elit tellus eu odio. Nunc sapien libero, faucibus quis vehicula quis, interdum eu mauris.
+						</p>
+						<p>
+							Cras eu consectetur turpis. Etiam condimentum, lorem ac imperdiet ultricies, velit arcu feugiat nunc, vel tristique sapien diam quis velit. Maecenas non metus augue, sit amet tristique libero. In placerat urna quis orci hendrerit pretium. Donec luctus, magna rhoncus pretium tempor, odio orci consequat turpis, id rutrum elit tellus eu odio. Nunc sapien libero, faucibus quis vehicula quis, interdum eu mauris.
+						</p>
+					</div>
+				</article>
+				<!-- /article -->
+
+			</main>
+			<!-- /MAIN -->
+
+			<!-- ==================== SIDEBAR ==================== -->
+			<!-- [REFACTOR] <div id="sidebar"> ➔ <aside id="sidebar"> -->
+			<aside id="sidebar">
+
+				<!-- [REFACTOR] <div id="navigation"> ➔ <nav id="navigation"> -->
+				<!-- Giữ <div> bên trong để khớp CSS selector: #navigation > div -->
+				<nav id="navigation">
+					<div>
+						<ul>
+							<li class="selected">
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+							<li>
+								<a href="news.html">News</a>
+							</li>
+							<li>
+								<a href="blog.html">Blog</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<!-- /navigation -->
+
+				<!-- [REFACTOR] <div id="connect"> ➔ <section id="connect"> -->
+				<!-- Giữ <div class="section"> bọc ngoài để khớp CSS: #sidebar div.section -->
+				<div class="section">
+					<section id="connect">
+						<h2>Connect with us:</h2>
+						<!-- [ACCESSIBILITY] Thêm aria-label và title cho các liên kết mạng xã hội không có chữ -->
+						<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter" aria-label="Theo dõi trên Twitter" title="Twitter"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook" aria-label="Kết nối trên Facebook" title="Facebook"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus" aria-label="Theo dõi trên Google+" title="Google+"></a>
+					</section>
+				</div>
+				<!-- /connect -->
+
+				<!-- [REFACTOR] <div id="posts"> ➔ <section id="posts"> -->
+				<!-- Giữ <div class="section"> bọc ngoài để khớp CSS: #sidebar div.section -->
+				<div class="section">
+					<section id="posts">
+						<h2>Placeholder</h2>
+						<ul>
+							<!-- [REFACTOR] Bọc từng bài viết ngắn bằng <article> -->
+							<li>
+								<article>
+									<h5>Title Sample One</h5>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius
+									</p>
+									<a href="news.html" class="more">Read more</a>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h5>Title Sample One</h5>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius
+									</p>
+									<a href="news.html" class="more">Read more</a>
+								</article>
+							</li>
+						</ul>
+						<a href="news.html" class="btn2">View More</a>
+					</section>
+				</div>
+				<!-- /posts -->
+
+			</aside>
+			<!-- /SIDEBAR -->
+
+		</div>
+		<!-- /contents -->
+
+		<!-- ==================== FOOTER ==================== -->
+		<!-- [REFACTOR] <div id="footer"> ➔ <footer id="footer"> -->
+		<footer id="footer">
+			<div>
+				<ul id="featured">
+					<li>
+						<!-- [ACCESSIBILITY] Thêm aria-label cho liên kết icon không có chữ -->
+						<a href="index.html" class="home" aria-label="Trang chủ" title="Trang chủ"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+					<li>
+						<a href="index.html" class="bell" aria-label="Thông báo" title="Thông báo"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+					<li>
+						<a href="index.html" class="globe" aria-label="Toàn cầu" title="Toàn cầu"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+					<li>
+						<a href="index.html" class="pencil" aria-label="Biên tập" title="Biên tập"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+				</ul>
+				<!-- [REFACTOR] Bọc nội dung bản quyền bằng <small> chuẩn ngữ nghĩa -->
+				<p id="footnote">
+					<small>© Copyright © 2011.Company name all rights reserved</small>
+				</p>
+			</div>
+		</footer>
+		<!-- /FOOTER -->
+
+	</div>
+	<!-- /page -->
+</body>
+</html>
